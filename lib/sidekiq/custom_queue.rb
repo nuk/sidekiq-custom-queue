@@ -12,9 +12,3 @@ Sidekiq.configure_client do |config|
     chain.add Sidekiq::CustomQueue::ClientMiddleware
   end
 end
-
-Sidekiq.configure_server do |config|
-  config.client_middleware do |chain|
-    chain.add Sidekiq::CustomQueue::ClientMiddleware
-  end
-end

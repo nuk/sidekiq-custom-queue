@@ -49,6 +49,8 @@ method and put that job in this queue:
 WorkerWithCustomQueue.perform_async('xyz', 1) # gets enqueued in the 'xyz_queue' instead of the default queue
 ```
 
+*NOTE:* Although the queue name is created dynamically through the custom method, the Sidekiq Fetcher will still look for such queues from your configuration. So you need to be sure thhe queue names being created are being watched for execution.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests.
